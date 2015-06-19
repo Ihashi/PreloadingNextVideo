@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="PreloadingNextVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtC-zA-Qae">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2c0-Ba-BQh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wtC-zA-Qae" secondAttribute="trailing" id="HEf-hm-opT"/>
+                            <constraint firstAttribute="trailing" secondItem="2c0-Ba-BQh" secondAttribute="trailing" id="HfW-uq-tG9"/>
+                            <constraint firstItem="wtC-zA-Qae" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="X7v-Nr-U7A"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wtC-zA-Qae" secondAttribute="bottom" id="ZhP-9g-kl7"/>
+                            <constraint firstItem="2c0-Ba-BQh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bsB-bQ-RXX"/>
+                            <constraint firstItem="2c0-Ba-BQh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fWq-Qb-tYy"/>
+                            <constraint firstItem="wtC-zA-Qae" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jZm-WO-5WH"/>
+                            <constraint firstItem="2c0-Ba-BQh" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="lb0-dD-An1"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="V4g-ez-eHS" appends="YES" id="wML-jq-HIK"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="leftHorizontalConstraintStory" destination="bsB-bQ-RXX" id="zjf-RN-gXf"/>
+                        <outlet property="rightHorizontalConstraintStory" destination="HfW-uq-tG9" id="tTQ-Rb-R2c"/>
+                        <outlet property="rootContainerView" destination="2c0-Ba-BQh" id="4se-ew-XpM"/>
+                        <outlet property="rootContainerView2" destination="wtC-zA-Qae" id="pZK-Ff-KCW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="V4g-ez-eHS">
+                    <connections>
+                        <action selector="swipeGesture:" destination="BYZ-38-t0r" id="pDT-Wq-cSp"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="328" y="441"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="G44-7L-zCi">
+            <objects>
+                <viewController storyboardIdentifier="FeedView" id="NpW-gx-Wlc" customClass="FeedViewController" customModule="PreloadingNextVideo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KD7-8g-occ"/>
+                        <viewControllerLayoutGuide type="bottom" id="3k4-84-0ta"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0sR-wf-cc5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfc-LF-Vxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="441"/>
         </scene>
     </scenes>
 </document>

@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		27E4F6D91B3414350072D4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4F6D81B3414350072D4E1 /* AppDelegate.swift */; };
-		27E4F6DB1B3414350072D4E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4F6DA1B3414350072D4E1 /* ViewController.swift */; };
+		27E4F6DB1B3414350072D4E1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4F6DA1B3414350072D4E1 /* RootViewController.swift */; };
 		27E4F6DE1B3414350072D4E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E4F6DC1B3414350072D4E1 /* Main.storyboard */; };
 		27E4F6E01B3414350072D4E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E4F6DF1B3414350072D4E1 /* Images.xcassets */; };
 		27E4F6E31B3414350072D4E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E4F6E11B3414350072D4E1 /* LaunchScreen.xib */; };
 		27E4F6EF1B3414350072D4E1 /* PreloadingNextVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4F6EE1B3414350072D4E1 /* PreloadingNextVideoTests.swift */; };
+		27E4F6F91B3415E40072D4E1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4F6F81B3415E40072D4E1 /* FeedViewController.swift */; };
+		27E4F6FB1B346A310072D4E1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 27E4F6FA1B346A310072D4E1 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		27E4F6D31B3414350072D4E1 /* PreloadingNextVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreloadingNextVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E4F6D71B3414350072D4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E4F6D81B3414350072D4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27E4F6DA1B3414350072D4E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27E4F6DA1B3414350072D4E1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		27E4F6DD1B3414350072D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27E4F6DF1B3414350072D4E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27E4F6E21B3414350072D4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		27E4F6E81B3414350072D4E1 /* PreloadingNextVideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreloadingNextVideoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E4F6ED1B3414350072D4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E4F6EE1B3414350072D4E1 /* PreloadingNextVideoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadingNextVideoTests.swift; sourceTree = "<group>"; };
+		27E4F6F81B3415E40072D4E1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		27E4F6FA1B346A310072D4E1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		27E4F6CA1B3414350072D4E1 = {
 			isa = PBXGroup;
 			children = (
+				27E4F6FA1B346A310072D4E1 /* .gitignore */,
 				27E4F6D51B3414350072D4E1 /* PreloadingNextVideo */,
 				27E4F6EB1B3414350072D4E1 /* PreloadingNextVideoTests */,
 				27E4F6D41B3414350072D4E1 /* Products */,
@@ -77,11 +82,10 @@
 		27E4F6D51B3414350072D4E1 /* PreloadingNextVideo */ = {
 			isa = PBXGroup;
 			children = (
-				27E4F6D81B3414350072D4E1 /* AppDelegate.swift */,
-				27E4F6DA1B3414350072D4E1 /* ViewController.swift */,
+				27E4F6DA1B3414350072D4E1 /* RootViewController.swift */,
+				27E4F6F81B3415E40072D4E1 /* FeedViewController.swift */,
 				27E4F6DC1B3414350072D4E1 /* Main.storyboard */,
 				27E4F6DF1B3414350072D4E1 /* Images.xcassets */,
-				27E4F6E11B3414350072D4E1 /* LaunchScreen.xib */,
 				27E4F6D61B3414350072D4E1 /* Supporting Files */,
 			);
 			path = PreloadingNextVideo;
@@ -90,7 +94,9 @@
 		27E4F6D61B3414350072D4E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27E4F6D81B3414350072D4E1 /* AppDelegate.swift */,
 				27E4F6D71B3414350072D4E1 /* Info.plist */,
+				27E4F6E11B3414350072D4E1 /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 				TargetAttributes = {
 					27E4F6D21B3414350072D4E1 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7D5G4U829D;
 					};
 					27E4F6E71B3414350072D4E1 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -192,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E4F6FB1B346A310072D4E1 /* .gitignore in Resources */,
 				27E4F6DE1B3414350072D4E1 /* Main.storyboard in Resources */,
 				27E4F6E31B3414350072D4E1 /* LaunchScreen.xib in Resources */,
 				27E4F6E01B3414350072D4E1 /* Images.xcassets in Resources */,
@@ -212,7 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27E4F6DB1B3414350072D4E1 /* ViewController.swift in Sources */,
+				27E4F6DB1B3414350072D4E1 /* RootViewController.swift in Sources */,
+				27E4F6F91B3415E40072D4E1 /* FeedViewController.swift in Sources */,
 				27E4F6D91B3414350072D4E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,9 +351,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PreloadingNextVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -352,9 +365,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PreloadingNextVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
