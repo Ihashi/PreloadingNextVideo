@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtC-zA-Qae">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtC-zA-Qae" userLabel="Container View 2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2c0-Ba-BQh">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2c0-Ba-BQh" userLabel="Container View 1">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </containerView>
                         </subviews>
@@ -35,14 +35,22 @@
                             <constraint firstItem="2c0-Ba-BQh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fWq-Qb-tYy"/>
                             <constraint firstItem="wtC-zA-Qae" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jZm-WO-5WH"/>
                             <constraint firstItem="2c0-Ba-BQh" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="lb0-dD-An1"/>
+                            <constraint firstItem="2c0-Ba-BQh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="q3x-Cr-HGq"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fWq-Qb-tYy"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="V4g-ez-eHS" appends="YES" id="wML-jq-HIK"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="leftHorizontalConstraintStory" destination="bsB-bQ-RXX" id="zjf-RN-gXf"/>
+                        <outlet property="leftHorizontalConstraintStory2" destination="jZm-WO-5WH" id="2Ox-Nb-kVh"/>
                         <outlet property="rightHorizontalConstraintStory" destination="HfW-uq-tG9" id="tTQ-Rb-R2c"/>
+                        <outlet property="rightHorizontalConstraintStory2" destination="HEf-hm-opT" id="0JV-54-Kqp"/>
                         <outlet property="rootContainerView" destination="2c0-Ba-BQh" id="4se-ew-XpM"/>
                         <outlet property="rootContainerView2" destination="wtC-zA-Qae" id="pZK-Ff-KCW"/>
                     </connections>
@@ -67,9 +75,35 @@
                     <view key="view" contentMode="scaleToFill" id="0sR-wf-cc5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4n-z6-yUS">
+                                <rect key="frame" x="164" y="279" width="272" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="879-T6-XZK"/>
+                                    <constraint firstAttribute="height" constant="42" id="Z7Y-1U-t9A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="g4n-z6-yUS" firstAttribute="centerX" secondItem="0sR-wf-cc5" secondAttribute="centerX" id="aog-RB-dQA"/>
+                            <constraint firstAttribute="centerY" secondItem="g4n-z6-yUS" secondAttribute="centerY" constant="0.5" id="wZC-Cg-EG5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameOfFeedViewController" destination="g4n-z6-yUS" id="3WV-Kp-50R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfc-LF-Vxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

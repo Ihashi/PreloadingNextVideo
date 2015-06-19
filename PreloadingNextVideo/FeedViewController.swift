@@ -8,5 +8,6 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {    
+class FeedViewController: UIViewController {
+    @IBOutlet weak var nameOfFeedViewController: UILabel!
 }

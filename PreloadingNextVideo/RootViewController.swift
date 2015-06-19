@@ -15,8 +15,12 @@ class RootViewController: UIViewController {
     @IBOutlet weak var rightHorizontalConstraintStory: NSLayoutConstraint!
     
     @IBOutlet weak var rootContainerView2: UIView!
+    @IBOutlet weak var leftHorizontalConstraintStory2: NSLayoutConstraint!
+    @IBOutlet weak var rightHorizontalConstraintStory2: NSLayoutConstraint!
+    
     private var feedViewController1: FeedViewController!
     private var feedViewController2: FeedViewController!
+    private var nameOfSubviewInFront: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +28,20 @@ class RootViewController: UIViewController {
         feedViewController1 = storyboard?.instantiateViewControllerWithIdentifier("FeedView") as? FeedViewController
         feedViewController1.view.frame = rootContainerView.frame
         feedViewController1.view.backgroundColor = UIColor.redColor()
+        feedViewController1.nameOfFeedViewController.text = "Feed View Controller 1"
         
         feedViewController2 = storyboard?.instantiateViewControllerWithIdentifier("FeedView") as? FeedViewController
         feedViewController2.view.frame = rootContainerView.frame
         feedViewController2.view.backgroundColor = UIColor.blueColor()
+        feedViewController2.nameOfFeedViewController.text = "Feed View Controller 2"
         
         rootContainerView.addSubview(feedViewController1.view)
         rootContainerView2.addSubview(feedViewController2.view)
+        nameOfSubviewInFront = "FeedViewController2"
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     private struct Constants {
@@ -51,8 +62,13 @@ class RootViewController: UIViewController {
         case .Ended:
             if(abs(xOffsetStory) >= requiredTranslationX) {
                 let directionExitStory = rightTranslation ? viewWidth : -viewWidth
-                leftHorizontalConstraintStory.constant = directionExitStory
-                rightHorizontalConstraintStory.constant = -directionExitStory
+                if nameOfSubviewInFront == "FeedViewController1" {
+                    leftHorizontalConstraintStory.constant = directionExitStory
+                    rightHorizontalConstraintStory.constant = -directionExitStory
+                } else {
+                    leftHorizontalConstraintStory2.constant = directionExitStory
+                    rightHorizontalConstraintStory2.constant = -directionExitStory
+                }
                 
                 view.setNeedsUpdateConstraints()
                 UIView.animateWithDuration (
@@ -64,7 +80,13 @@ class RootViewController: UIViewController {
                     },
                     completion: { (result:Bool) in
                         self.returnToIdentity(0)
-                        self.view.bringSubviewToFront(self.rootContainerView2)
+                        if self.nameOfSubviewInFront == "FeedViewController1" {
+                            self.view.bringSubviewToFront(self.rootContainerView2)
+                            self.nameOfSubviewInFront = "FeedViewController2"
+                        } else {
+                            self.view.bringSubviewToFront(self.rootContainerView)
+                            self.nameOfSubviewInFront = "FeedViewController1"
+                        }
                     }
                 )
             }
@@ -73,8 +95,13 @@ class RootViewController: UIViewController {
             }
         case .Changed:
             if translationX != 0 {
-                leftHorizontalConstraintStory.constant = xOffsetStory
-                rightHorizontalConstraintStory.constant = -xOffsetStory
+                if nameOfSubviewInFront == "FeedViewController1" {
+                    leftHorizontalConstraintStory.constant = xOffsetStory
+                    rightHorizontalConstraintStory.constant = -xOffsetStory
+                } else {
+                    leftHorizontalConstraintStory2.constant = xOffsetStory
+                    rightHorizontalConstraintStory2.constant = -xOffsetStory
+                }
 
                 view.layoutIfNeeded()
             }
@@ -83,8 +110,13 @@ class RootViewController: UIViewController {
     }
     
     private func returnToIdentity(time: Double) {
-        leftHorizontalConstraintStory.constant = 0
-        rightHorizontalConstraintStory.constant = 0
+        if nameOfSubviewInFront == "FeedViewController1" {
+            leftHorizontalConstraintStory.constant = 0
+            rightHorizontalConstraintStory.constant = 0
+        } else {
+            leftHorizontalConstraintStory2.constant = 0
+            rightHorizontalConstraintStory2.constant = 0
+        }
         
         view.setNeedsUpdateConstraints()
         
